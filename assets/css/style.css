@@ -1,0 +1,70 @@
+.card-group .card h1.sign-in {
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 20px;
+}
+
+.card-group .card .input .icon-background{
+    background-color: lightgrey;
+    padding: 0.75rem;
+    float: left;
+}
+
+.card-group .card .input {
+    width:100%;
+    height: 70px;
+}
+
+.card-group .card .input .form-control {
+    float: right;
+    width: 90%;
+    padding: 0.75rem 0.75rem;
+    border-radius: 0;
+}
+
+.card-group .card form {
+    padding: 0 30px;
+}
+
+.card-group .card .login-extras .remember-me {
+    float:left;
+}
+
+.card-group .card .login-extras .forgot-password {
+    float:right;
+}
+
+.card-group .card .login-btn {
+    width: 90%;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.card-group .card .register-btn {
+    font-weight: bold;
+    border-color: white;
+    border-radius: 20px;
+    color: white;
+    width: 50%;
+    margin: 1rem auto;
+}
+
+
+.card-group .card .sign-up-title{
+    color:white;
+    padding:40px 20px;
+    border-bottom:2px solid white;
+    margin-bottom: 20px;
+}
+
+.card-group .card .sign-up-body{
+    color:white;
+    padding:0 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+
+
