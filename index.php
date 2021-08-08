@@ -62,10 +62,117 @@
     </div>
 
 <!--    Login form end-->
+
+<!--    Register Form start-->
+
+    <div class="row justify-content-center" id="register-box" style="display:none;">
+        <div class="col-md-10">
+            <div class="card-group">
+                <div style="background-color: #ff8c00;" class="card">
+                    <h1 style="margin-top: 40px;" class="text-center sign-up-title">Welcome back!</h1>
+                    <h4 class="sign-up-body">To keep connected with us please login with your personal info.</h4>
+                    <button id="login-link" class="btn register-btn">Sign In</button>
+                </div>
+                <div class="card" style="flex-grow: 1.5" >
+                    <h1 class="text-center sign-in text-primary">Create account</h1>
+                    <form action="#" method="POST" id="register-form">
+                        <div class="input">
+                            <span class="icon-background">
+                                <i class="far fa-user fa-lg"></i>
+                            </span>
+                            <input type="text" name="name" id="rname" class="form-control" placeholder="Full Name" required>
+                        </div>
+
+                        <div class="input">
+                            <span class="icon-background">
+                                <i class="far fa-envelope fa-lg"></i>
+                            </span>
+                            <input type="email" name="email" id="remail" class="form-control" placeholder="Email" required>
+                        </div>
+
+                        <div class="input">
+                            <span class="icon-background">
+                               <i class="fas fa-key fa-lg"></i>
+                            </span>
+                            <input type="password" name="password" id="rpassword" class="form-control" placeholder="Password" required minlength="5">
+                        </div>
+
+                        <div class="input">
+                            <span class="icon-background">
+                               <i class="fas fa-key fa-lg"></i>
+                            </span>
+                            <input type="password" name="cpassword" id="cpassword" class="form-control" placeholder="Confirm Password" required minlength="5">
+                        </div>
+
+                        <input type="submit" Value="Sign Up" id="register-btn" class="btn btn-primary login-btn">
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!--    Register Form end-->
+
+<!--Forgot password form start-->
+    <div class="row justify-content-center" id="forgot-box" style="display:none;">
+        <div class="col-md-10">
+            <div class="card-group">
+
+                <div style="background-color: #ff8c00;" class="card">
+                    <h1 style="margin-top: 40px;" class="text-center sign-up-title">Reset Password!</h1>
+                    <button id="back-link" class="btn register-btn">Back</button>
+
+                </div>
+
+
+                <div style="flex-grow: 1.5" class="card">
+                    <h1 class="text-center sign-in text-primary">Forgot your password</h1>
+                    <p style="padding:10px;" class="text-center">To reset your password, enter the registered email address and we will send you the rest of the instructions on your email!</p>
+                    <form action="#" method="POST" id="forgot-form">
+                        <div class="input">
+                            <span class="icon-background">
+                                <i class="far fa-envelope fa-lg"></i>
+                            </span>
+                            <input type="email" name="email" id="femail" class="form-control" placeholder="Email" required>
+                        </div>
+
+                        <input type="submit" Value="Reset Password" id="forgot-btn" class="btn btn-primary login-btn">
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!--    Forgot password form end-->
 </div>
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+       $('#register-link').click(function (){
+           $('#login-box').hide();
+           $('#register-box').show();
+       })
+
+        $('#login-link').click(function (){
+            $('#login-box').show();
+            $('#register-box').hide();
+        })
+
+        $('#forgot-link').click(function (){
+            $('#login-box').hide();
+            $('#forgot-box').show();
+        })
+
+        $('#back-link').click(function (){
+            $('#login-box').show();
+            $('#forgot-box').hide();
+        })
+    })
+</script>
 </body>
 </html>
