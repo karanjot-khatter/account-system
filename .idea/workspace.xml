@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b711e72e-c4e5-49e3-b8e7-aec71c7ac26b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/php/dbh.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/php/action.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/php/authentication.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/php/dbh.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/dbh.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +19,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpServers">
+    <servers>
+      <server host="account-system" id="af4e860c-3984-43b6-af1c-33247598acae" name="account-system" />
+    </servers>
   </component>
   <component name="ProjectId" id="1wMLvKA6vyq4E1bx8oJ7w83NOOB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -40,7 +50,7 @@
       <workItem from="1628263744602" duration="816000" />
       <workItem from="1628264692199" duration="2030000" />
       <workItem from="1628423981657" duration="14594000" />
-      <workItem from="1628597468125" duration="795000" />
+      <workItem from="1628597468125" duration="7076000" />
     </task>
     <task id="LOCAL-00001" summary="Created sign in card with bootsrap 5.">
       <created>1628435184005</created>
@@ -56,7 +66,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628438726702</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="created a database connection via pdo.">
+      <created>1628598573119</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1628598573119</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -65,6 +82,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created sign in card with bootsrap 5." />
     <MESSAGE value="Created the designs for the other cards and used jquery to hide and show the cards." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created the designs for the other cards and used jquery to hide and show the cards." />
+    <MESSAGE value="created a database connection via pdo." />
+    <option name="LAST_COMMIT_MESSAGE" value="created a database connection via pdo." />
   </component>
 </project>

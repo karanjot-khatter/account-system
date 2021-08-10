@@ -76,6 +76,7 @@
                 <div class="card" style="flex-grow: 1.5" >
                     <h1 class="text-center sign-in text-primary">Create account</h1>
                     <form action="#" method="POST" id="register-form">
+                        <div id="regAlert"></div>
                         <div class="input">
                             <span class="icon-background">
                                 <i class="far fa-user fa-lg"></i>
@@ -103,6 +104,8 @@
                             </span>
                             <input type="password" name="cpassword" id="cpassword" class="form-control" placeholder="Confirm Password" required minlength="5">
                         </div>
+
+                        <div style="font-weight:bold;" class="text-danger" id="passError"></div>
 
                         <input type="submit" Value="Sign Up" id="register-btn" class="btn btn-primary login-btn">
 
@@ -156,23 +159,54 @@
        $('#register-link').click(function (){
            $('#login-box').hide();
            $('#register-box').show();
-       })
+       });
 
         $('#login-link').click(function (){
             $('#login-box').show();
             $('#register-box').hide();
-        })
+        });
 
         $('#forgot-link').click(function (){
             $('#login-box').hide();
             $('#forgot-box').show();
-        })
+        });
 
         $('#back-link').click(function (){
             $('#login-box').show();
             $('#forgot-box').hide();
-        })
-    })
+        });
+
+        //register ajax request
+        $('#register-btn').click(function(e){
+            if($('#register-form')[0].checkValidity()){
+                //stop going to new page
+                e.preventDefault();
+                $('#register-btn').val('Please wait...');
+
+                if($('#rpassword').val() != $('#cpassword').val()){
+                    $('#passError').text('* Password did not match!');
+                    $('#register-btn').val('Sign up');
+                } else {
+                    $('#passError').text('');
+                    $.ajax({
+                        url : 'assets/php/action.php',
+                        method: "POST",
+                        data : $('#register-form').serialize()+'&action=register',
+                        success: function(response) {
+                            $('#register-btn').val('Sign up');
+                            if (response === 'register')
+                            {
+                                window.location = 'home.php';
+                            } else {
+                                $('#regAlert').html(response);
+                            }
+                        }
+                    });
+
+                }
+            }
+        });
+    });
 </script>
 </body>
 </html>
