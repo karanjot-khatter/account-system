@@ -1,4 +1,5 @@
 <?php
-session_start();
+require_once 'assets/php/session.php';
+?>
 
-echo $_SESSION['user'];
+<a href="assets/php/logout.php">Logout</a>

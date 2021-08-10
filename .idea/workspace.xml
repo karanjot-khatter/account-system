@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b711e72e-c4e5-49e3-b8e7-aec71c7ac26b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/php/action.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/php/authentication.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/php/logout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/php/session.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/php/dbh.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/dbh.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/php/action.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/action.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/php/authentication.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/authentication.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +51,7 @@
       <workItem from="1628263744602" duration="816000" />
       <workItem from="1628264692199" duration="2030000" />
       <workItem from="1628423981657" duration="14594000" />
-      <workItem from="1628597468125" duration="7076000" />
+      <workItem from="1628597468125" duration="11718000" />
     </task>
     <task id="LOCAL-00001" summary="Created sign in card with bootsrap 5.">
       <created>1628435184005</created>
@@ -73,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628598573119</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ajax response created on account registeration.">
+      <created>1628607642744</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1628607642744</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,6 +91,7 @@
     <MESSAGE value="Created sign in card with bootsrap 5." />
     <MESSAGE value="Created the designs for the other cards and used jquery to hide and show the cards." />
     <MESSAGE value="created a database connection via pdo." />
-    <option name="LAST_COMMIT_MESSAGE" value="created a database connection via pdo." />
+    <MESSAGE value="ajax response created on account registeration." />
+    <option name="LAST_COMMIT_MESSAGE" value="ajax response created on account registeration." />
   </component>
 </project>

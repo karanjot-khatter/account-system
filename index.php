@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['user'])){
+    header('location:home.php');
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,23 +28,24 @@
                 <div style="flex-grow: 1.5" class="card">
                     <h1 class="text-center sign-in text-primary">Sign in to Account</h1>
                     <form action="#" method="POST" id="login-form">
+                        <div id="login-alert"></div>
                         <div class="input">
                             <span class="icon-background">
                                 <i class="far fa-envelope fa-lg"></i>
                             </span>
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Email" required value="<?php if(isset($_COOKIE['email'])){ echo $_COOKIE['email'];}?>">
                         </div>
 
                         <div class="input">
                             <span class="icon-background">
                                <i class="fas fa-key fa-lg"></i>
                             </span>
-                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required value="<?php if(isset($_COOKIE['password'])){ echo $_COOKIE['password'];}?>">
                         </div>
 
                         <div class="login-extras">
                             <div class="remember-me">
-                                <input type="checkbox" name="rem" id="customCheck">
+                                <input type="checkbox" name="rem" id="customCheck" <?php if (isset($_COOKIE['email'])) {?> checked <?php }?>>
                                 <label for="customCheck">Remember me</label>
                             </div>
                             <div class="forgot-password">
@@ -206,6 +214,30 @@
                 }
             }
         });
+
+        //login ajax request
+        $('#login-btn').click(function(e){
+            if($('#login-form')[0].checkValidity()){
+                e.preventDefault();
+                $('#login-btn').val('Please wait...');
+
+                $.ajax({
+                    url : 'assets/php/action.php',
+                    method: "POST",
+                    data : $('#login-form').serialize()+'&action=login',
+                    success: function(response){
+                        $('#login-btn').val('Sign in');
+                        if (response === 'login')
+                        {
+                            window.location = 'home.php';
+                        } else{
+                            $('#login-alert').html(response);
+                        }
+                    }
+                });
+
+            }
+        })
     });
 </script>
 </body>
