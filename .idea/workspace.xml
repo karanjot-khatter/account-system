@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b711e72e-c4e5-49e3-b8e7-aec71c7ac26b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/php/dbh.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +39,8 @@
       <updated>1628263741877</updated>
       <workItem from="1628263744602" duration="816000" />
       <workItem from="1628264692199" duration="2030000" />
-      <workItem from="1628423981657" duration="13786000" />
+      <workItem from="1628423981657" duration="14594000" />
+      <workItem from="1628597468125" duration="795000" />
     </task>
     <task id="LOCAL-00001" summary="Created sign in card with bootsrap 5.">
       <created>1628435184005</created>
@@ -48,7 +49,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628435184005</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Created the designs for the other cards and used jquery to hide and show the cards.">
+      <created>1628438726702</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1628438726702</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -56,6 +64,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created sign in card with bootsrap 5." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created sign in card with bootsrap 5." />
+    <MESSAGE value="Created the designs for the other cards and used jquery to hide and show the cards." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created the designs for the other cards and used jquery to hide and show the cards." />
   </component>
 </project>
