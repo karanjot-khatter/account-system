@@ -1,5 +1,15 @@
 <?php
 session_start();
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
 require_once 'authentication.php';
 $user = new Auth();
 
@@ -51,4 +61,41 @@ if (isset($_POST['action']) && $_POST['action'] == 'login'){
     }
 }
 
+//handle forgot ajax request
+if (isset($_POST['action']) && $_POST['action'] == 'forgot') {
+    $email = $user->test_input($_POST['email']);
+    $user_found = $user->currentUser($email);
+
+    if ($user_found != null){
+        $token = uniqid();
+        $token = str_shuffle($token);
+        $user->forgotPassword($token, $email);
+
+//        try{
+//            $mail->isSMTP();
+//            $mail->Host = "smtp.live.com";
+//            $mail->SMTPAuth = true;
+//            $mail->Username;
+//            $mail->Password;
+//            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+//            $mail->Port = 587;
+//
+//            $mail->setFrom();
+//            $mail->addAddress($email);
+//            $mail->isHTML(true);
+//            $mail->Subject = 'Reset Password';
+//            $mail->Body = '<h3>Click the below link to reset your password. <br> <a href="http://account-system/reset-pass.php?email='.$email.'&token='.$token.'">http://account-system/reset-pass.php?email='.$email.'&token='.$token.'</a><br>Regards <br> Karanjot!</h3>';
+//            $mail->send();
+//
+//            echo $user->showMessage('success', 'we have sent you the reset link, please check your email!');
+//
+//        } catch (Exception $e) {
+//            echo $user->showMessage('danger', 'Something went wrong, please try again later');
+//        }
+    } else {
+        echo $user->showMessage('info', 'This email is not registered');
+    }
+
+
+}
 

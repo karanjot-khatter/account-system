@@ -44,4 +44,14 @@ class Auth extends Dbh {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return $row;
     }
+
+    //forgot password
+
+    public function forgotPassword($token, $email){
+        $sql = 'update users set token = :token, token_expire = DATE_ADD(NOW(), INTERVAL 10 MINUTE ) where email = :email';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['token' => $token , 'email' => $email]);
+
+        return true;
+    }
 }

@@ -141,6 +141,7 @@ if(isset($_SESSION['user'])){
                     <h1 class="text-center sign-in text-primary">Forgot your password</h1>
                     <p style="padding:10px;" class="text-center">To reset your password, enter the registered email address and we will send you the rest of the instructions on your email!</p>
                     <form action="#" method="POST" id="forgot-form">
+                        <div id="forgotAlert"></div>
                         <div class="input">
                             <span class="icon-background">
                                 <i class="far fa-envelope fa-lg"></i>
@@ -237,7 +238,28 @@ if(isset($_SESSION['user'])){
                 });
 
             }
-        })
+        });
+
+        //Forgot password ajax request
+        $('#forgot-btn').click(function(e){
+            if($('#forgot-form')[0].checkValidity()){
+                e.preventDefault();
+
+                $('#forgot-btn').val('Please wait...');
+
+                $.ajax({
+                    url : 'assets/php/action.php',
+                    method: "POST",
+                    data : $('#forgot-form').serialize()+'&action=forgot',
+                    success: function (response){
+                        $('#forgot-btn').val('Reset Password');
+                        $('#forgot-form')[0].reset();
+                        $('#forgotAlert').html(response);
+
+                    }
+                });
+            }
+        });
     });
 </script>
 </body>
