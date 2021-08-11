@@ -54,4 +54,23 @@ class Auth extends Dbh {
 
         return true;
     }
+
+    //reset password user authentication
+    public function reset_pass_auth($email, $token){
+        $sql = "Select id from users where email = :email and token = :token and token != '' and token_expire > now() and deleted != 0";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['email' => $email, 'token' => $token ]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $row;
+    }
+
+    //update new password to database
+
+    public function updateNewPass($pwd, $email) {
+        $sql = "Update users set token='', password = :pwd where email = :email and deleted != 0";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['pwd' => $pwd, 'email' => $email ]);
+
+        return true;
+    }
 }
