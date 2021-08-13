@@ -73,4 +73,21 @@ class Auth extends Dbh {
 
         return true;
     }
+
+    //insert new note to notes table
+    public function addNewNote($uid, $title, $note){
+        $sql = 'INSERT INTO notes (uid, title, note) VALUES (:uid, :title, :note)';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['uid' => $uid, 'title' => $title, 'note' => $note]);
+        return true;
+    }
+
+    //fetch all notes from user
+    public function getNotes($uid){
+        $sql = 'Select * from notes where uid = :uid';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['uid' => $uid ]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }

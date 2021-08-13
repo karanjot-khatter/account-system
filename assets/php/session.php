@@ -13,7 +13,7 @@ $cEmail = $_SESSION['user'];
 
 $data = $cUser->currentUser($cEmail);
 
-$cid = $data['id'];
+$cid = $data['ID'];
 $cname = $data['name'];
 $cpass = $data['password'];
 $cphone = $data['phone'];
