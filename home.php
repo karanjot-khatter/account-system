@@ -108,8 +108,49 @@ require_once 'assets/php/header.php';
             }
         });
 
-        //Display all notes of a user
+        //Edit note of user Ajax request
+        $('body').on('click', '.editBtn', function(e){
+            e.preventDefault();
+            noteId = $(this).attr('id');
 
+            $.ajax({
+                url: 'assets/php/process.php',
+                method: 'POST',
+                data: {note_id: noteId},
+                success:function(response) {
+                    data = JSON.parse(response);
+                    $('#id').val(data.id);
+                    $('#title').val(data.title);
+                    $('#note').val(data.note);
+                }
+            });
+        });
+
+        //update note of a user ajax request
+        $('#editNoteBtn').click(function(e){
+            if($('#edit-note-form')[0].checkValidity()){
+                e.preventDefault();
+
+                $.ajax({
+                    url: 'assets/php/process.php',
+                    method: 'POST',
+                    data: $('#edit-note-form').serialize()+'&action=update_note',
+                    success:function(response){
+                        Swal.fire({
+                            title: 'Note updated successfully!',
+                            type: 'success'
+                        });
+
+                        $('#edit-note-form')[0].reset();
+                        $('#editNoteModal').modal('hide');
+                        displayAllNotes();
+
+                    }
+                });
+            }
+        });
+
+        //Display all notes of a user
         displayAllNotes();
 
         function displayAllNotes(){

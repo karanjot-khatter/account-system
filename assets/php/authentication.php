@@ -90,4 +90,24 @@ class Auth extends Dbh {
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    //Edit note of an user
+
+    public function editNote($id)
+    {
+        $sql = 'select * from notes where id = :id';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['id' => $id ]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    //update note of user
+
+    public function updateNote($id, $title, $note){
+        $sql = 'update notes set title = :title, note = :note, updated_at = now() WHERE id = :id';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['title' => $title, 'note' => $note, 'id' => $id ]);
+        return true;
+    }
 }

@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b711e72e-c4e5-49e3-b8e7-aec71c7ac26b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/php/process.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/php/authentication.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/authentication.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/php/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/php/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedback.php" beforeDir="false" afterPath="$PROJECT_DIR$/feedback.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/php/process.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/process.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/notification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +52,8 @@
       <workItem from="1628688966903" duration="3930000" />
       <workItem from="1628707752583" duration="3742000" />
       <workItem from="1628774474449" duration="9628000" />
-      <workItem from="1628853902455" duration="4834000" />
+      <workItem from="1628853902455" duration="4901000" />
+      <workItem from="1629027217703" duration="2863000" />
     </task>
     <task id="LOCAL-00001" summary="Created sign in card with bootsrap 5.">
       <created>1628435184005</created>
@@ -108,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628778795657</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Insert and display notes of a logged in user.">
+      <created>1628859031337</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1628859031337</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +125,7 @@
     <MESSAGE value="ajax response created on login registeration and worked on Remember Me functionality." />
     <MESSAGE value="Reset password page created allowing user to reset password via a link." />
     <MESSAGE value="created the navigation menu of the home page." />
-    <option name="LAST_COMMIT_MESSAGE" value="created the navigation menu of the home page." />
+    <MESSAGE value="Insert and display notes of a logged in user." />
+    <option name="LAST_COMMIT_MESSAGE" value="Insert and display notes of a logged in user." />
   </component>
 </project>
