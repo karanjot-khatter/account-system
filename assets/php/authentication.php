@@ -110,4 +110,12 @@ class Auth extends Dbh {
         $stmt->execute(['title' => $title, 'note' => $note, 'id' => $id ]);
         return true;
     }
+
+    //Delete a note from the user
+    public function deleteNote($id){
+        $sql = 'Delete from notes where id = :id';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['id' => $id ]);
+        return true;
+    }
 }

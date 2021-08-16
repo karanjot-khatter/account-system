@@ -69,4 +69,23 @@ if (isset($_POST['action']) && $_POST['action'] == 'update_note'){
     $cUser->updateNote($id, $title, $note);
 }
 
+//Handle delete a note from user request
+
+if (isset($_POST['del_id'])) {
+    $id = $_POST['del_id'];
+    $cUser->deleteNote($id);
+}
+
+//Handle display a note from user request
+
+if (isset($_POST['info_id'])) {
+    $id = $_POST['info_id'];
+    $note = $cUser->editNote($id);
+
+    echo json_encode($note);
+
+}
+
+
+
 ?>

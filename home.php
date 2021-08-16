@@ -150,6 +150,63 @@ require_once 'assets/php/header.php';
             }
         });
 
+        //delete a note of user ajax request
+        $('body').on('click', '.deleteBtn', function(e){
+            e.preventDefault();
+            del_id = $(this).attr('id');
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        url: 'assets/php/process.php',
+                        method: 'POST',
+                        data: {del_id : del_id},
+                        success : function(response){
+                            Swal.fire(
+                                'Deleted!',
+                                'Note deleted Successfully.',
+                                'success'
+                            )
+                            displayAllNotes();
+                        }
+
+                    });
+                }
+            })
+
+        });
+
+        //display note of a user ajax request
+        $('body').on('click', '.infoBtn', function(e) {
+            e.preventDefault();
+            info_id = $(this).attr('id');
+
+            $.ajax({
+               url: 'assets/php/process.php',
+               method: 'POST',
+               data: {info_id: info_id},
+               success: function(response){
+                    data = JSON.parse(response);
+                    Swal.fire({
+                        title: '<strong>Note : ID('+data.id+')</strong>',
+                        type: 'info',
+                        html: '<b>Title : </b>'+data.title+'<br><br><b>Note : </b>'+data.note+'<br><br><b>Written on : </b>'+data.created_at+'<br><br><b>Updated on : </b>'+data.updated_at,
+                        showCloseButton: true,
+
+                    });
+                }
+            });
+
+        });
+
         //Display all notes of a user
         displayAllNotes();
 
