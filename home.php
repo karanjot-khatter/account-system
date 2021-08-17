@@ -20,7 +20,7 @@ require_once 'assets/php/header.php';
             <a style="float:right" href="#" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addNoteModal"><i class="fas fa-plus-circle fa-lg"></i>&nbsp;Add new note</a>
         </div>
         <div class="card-body" id="showNote">
-
+            <p class="text-center">Please wait...</p>
         </div>
     </div>
 </div>

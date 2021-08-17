@@ -20,7 +20,9 @@ $cphone = $data['phone'];
 $cgender = $data['gender'];
 $cdob = $data['dob'];
 $cphoto = $data['photo'];
-$created = $data['created_at'];
+$created = $data['creared_at'];
 $verified = $data['verified'];
 
 $fname = strtok($cname, ' ');
+
+$reg_on = date('d M Y', strtotime($created));
