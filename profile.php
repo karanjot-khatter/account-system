@@ -66,7 +66,7 @@ require_once 'assets/php/header.php';
                                 <?php endif;?>
                             </div>
                             <div class="col-sm-6 border-primary">
-                                <form action="" method="post" enctype="multipart/form-data">
+                                <form action="" method="post" enctype="multipart/form-data" id="profile-update-form">
                                     <input type="hidden" name="oldImage" value="<?php echo $cphoto?>">
                                     <div class="form-group mt-0">
                                         <label for="profilePhoto" class="form-label">Upload Profile Image</label>
@@ -147,5 +147,24 @@ require_once 'assets/php/header.php';
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#profile-update-form').submit(function(e){
+            e.preventDefault();
+            $.ajax({
+                url: 'assets/php/process.php',
+                method: 'POST',
+                processData: false,
+                contentType: false,
+                cache: false,
+                data: new FormData(this),
+                success: function(response){
+                    location.reload();
+                }
+
+            });
+        });
+    });
+</script>
 </body>
 </html>

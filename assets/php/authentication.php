@@ -118,4 +118,13 @@ class Auth extends Dbh {
         $stmt->execute(['id' => $id ]);
         return true;
     }
+
+    //update profile of an user
+    public function updateProfile($name, $gender, $dob, $phone, $photo, $id)
+    {
+        $sql = 'Update users set name = :name, gender = :gender, dob = :dob, phone = :phone, photo = :photo where id = :id and deleted != 0';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['name' => $name, 'gender' => $gender, 'dob' => $dob, 'phone' => $phone, 'photo'=> $photo, 'id' => $id ]);
+        return true;
+    }
 }

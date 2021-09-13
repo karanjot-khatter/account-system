@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b711e72e-c4e5-49e3-b8e7-aec71c7ac26b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/img/changepass.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/php/authentication.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/authentication.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/php/process.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/process.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +64,9 @@
       <workItem from="1629199122844" duration="4495000" />
       <workItem from="1629208103221" duration="752000" />
       <workItem from="1630585969636" duration="2524000" />
-      <workItem from="1631115587956" duration="3803000" />
+      <workItem from="1631115587956" duration="3950000" />
+      <workItem from="1631202494606" duration="3344000" />
+      <workItem from="1631208971384" duration="424000" />
     </task>
     <task id="LOCAL-00001" summary="Created sign in card with bootsrap 5.">
       <created>1628435184005</created>
@@ -142,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629208847126</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="design of edit profile and change password navigation.">
+      <created>1631119532243</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1631119532244</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +170,7 @@
     <MESSAGE value="Worked on the edit note functionality of the user system." />
     <MESSAGE value="Worked on the delete note / view info of note functionality of the user system." />
     <MESSAGE value="design of profile tab completed." />
-    <option name="LAST_COMMIT_MESSAGE" value="design of profile tab completed." />
+    <MESSAGE value="design of edit profile and change password navigation." />
+    <option name="LAST_COMMIT_MESSAGE" value="design of edit profile and change password navigation." />
   </component>
 </project>

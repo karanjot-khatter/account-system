@@ -86,6 +86,29 @@ if (isset($_POST['info_id'])) {
 
 }
 
+//Handle profile update ajax response
+if (isset($_FILES['image'])){
+    $name = $cUser->test_input($_POST['name']);
+    $gender = $cUser->test_input($_POST['gender']);
+    $dob = $cUser->test_input($_POST['dob']);
+    $phone = $cUser->test_input($_POST['phone']);
+    $oldImage = $_POST['oldImage'];
+
+    $folder = 'uploads/';
+
+    if (isset($_FILES['image']['name']) && $_FILES['image']['name'] != '' )
+    {
+        $newImage = $folder.$_FILES['image']['name'];
+        move_uploaded_file($_FILES['image']['tmp_name'], $newImage);
+        if($oldImage != null){
+            unlink($oldImage);
+        }
+
+    }
+
+    $cUser->updateProfile($name, $gender, $dob, $phone, $newImage, $cid);
+}
+
 
 
 ?>
