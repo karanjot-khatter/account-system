@@ -109,6 +109,28 @@ if (isset($_FILES['image'])){
     $cUser->updateProfile($name, $gender, $dob, $phone, $newImage, $cid);
 }
 
+//handle change password ajax request
+
+if(isset($_POST['action']) && $_POST['action'] == 'change_pass') {
+    $currentPass = $_POST['curpass'];
+    $newPass = $_POST['newpass'];
+    $cnewPass = $_POST['cnewpass'];
+
+    $hnewpass = password_hash($newPass, PASSWORD_DEFAULT);
+
+    if($newPass != $cnewPass) {
+        echo $cUser->showMessage('danger', 'Password did not match');
+    } else{
+        if(password_verify($currentPass, $cpass)){
+            $cUser->changePass($hnewpass, $cid);
+            echo $cUser->showMessage('success', 'Password changed successfully');
+        } else{
+            echo $cUser->showMessage('danger', 'Current password is incorrect');
+        }
+    }
+
+}
+
 
 
 ?>

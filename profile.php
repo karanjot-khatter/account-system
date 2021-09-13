@@ -106,13 +106,14 @@ require_once 'assets/php/header.php';
                     </div>
                     <!--  Change Password tab content Start -->
                     <div class="tab-pane container fade" id="changePass">
+                        <div id="changePassAlert"></div>
                         <div class="row">
                             <div class="col-sm-6 border-primary">
                                 <div class="card border-primary">
                                     <div class="card-header text-center bg-primary text-light">
                                         Change Password
                                     </div>
-                                    <form action="#" method="post" class="px-3 mt-2">
+                                    <form action="#" method="post" class="px-3 mt-2" id="change-pass-form">
                                         <div class="form-group">
                                             <label for="curpass">Enter your current password</label>
                                             <input type="password" name="curpass" placeholder="Current Password" class="form-control" id="curpass" required minlength="5">
@@ -124,6 +125,9 @@ require_once 'assets/php/header.php';
                                         <div class="form-group">
                                             <label for="cnewpass">Enter new password</label>
                                             <input type="password" name="cnewpass" placeholder="Confirm New Password" class="form-control" id="cnewpass" required minlength="5">
+                                        </div>
+                                        <div class="form-group">
+                                            <p id="changePassError" class="text-danger"></p>
                                         </div>
                                         <div class="form-group">
                                             <input type="submit" name="changepass" value="Change Password" class="btn btn-success btn-block" id="changePassBtn">
@@ -163,6 +167,31 @@ require_once 'assets/php/header.php';
                 }
 
             });
+        });
+
+        //Change password ajax request
+        $('#changePassBtn').click(function(e){
+            if($('#change-pass-form')[0].checkValidity()){
+                e.preventDefault();
+                $('#changePassBtn').val('Please wait...');
+
+                if($('#newpass').val() != $('#cnewpass').val()){
+                    $('#changePassError').text('* Password did not match!');
+                    $('#changePassBtn').val('Change Password');
+                } else {
+                    $.ajax({
+                        url: 'assets/php/process.php',
+                        method: 'POST',
+                        data: $('#change-pass-form').serialize()+'&action=change_pass',
+                        success:function(response){
+                            $('#changePassAlert').html(response);
+                            $('#changePassBtn').val('Change Password');
+                            $('#changePassError').text('');
+                            $('#change-pass-form')[0].reset();
+                        }
+                    });
+                }
+            }
         });
     });
 </script>

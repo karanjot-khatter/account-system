@@ -127,4 +127,14 @@ class Auth extends Dbh {
         $stmt->execute(['name' => $name, 'gender' => $gender, 'dob' => $dob, 'phone' => $phone, 'photo'=> $photo, 'id' => $id ]);
         return true;
     }
+
+    //change password of an user
+
+    public function changePass($pass, $id){
+        $sql = 'Update users set password = :pass where id = :id and deleted != 0';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['pass' => $pass, 'id' => $id]);
+        return true;
+    }
+
 }
