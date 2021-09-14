@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/php/authentication.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/authentication.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/php/process.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/process.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback.php" beforeDir="false" afterPath="$PROJECT_DIR$/feedback.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +67,8 @@
       <workItem from="1631115587956" duration="3950000" />
       <workItem from="1631202494606" duration="3344000" />
       <workItem from="1631208971384" duration="424000" />
-      <workItem from="1631548109383" duration="2553000" />
+      <workItem from="1631548109383" duration="3307000" />
+      <workItem from="1631641503518" duration="2851000" />
     </task>
     <task id="LOCAL-00001" summary="Created sign in card with bootsrap 5.">
       <created>1628435184005</created>
@@ -160,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631548172395</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Made the change password form functional">
+      <created>1631550827279</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1631550827279</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +188,7 @@
     <MESSAGE value="design of profile tab completed." />
     <MESSAGE value="design of edit profile and change password navigation." />
     <MESSAGE value="making the edit profile form functional" />
-    <option name="LAST_COMMIT_MESSAGE" value="making the edit profile form functional" />
+    <MESSAGE value="Made the change password form functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made the change password form functional" />
   </component>
 </project>

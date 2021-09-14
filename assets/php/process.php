@@ -131,6 +131,15 @@ if(isset($_POST['action']) && $_POST['action'] == 'change_pass') {
 
 }
 
+//Handle send feedback to admin feedback request
+if(isset($_POST['action']) && $_POST['action'] == 'feedback')
+{
+    $subject = $cUser->test_input($_POST['subject']);
+    $feedback = $cUser->test_input($_POST['feedback']);
+
+    $cUser->sendFeedback($subject, $feedback, $cid);
+}
+
 
 
 ?>

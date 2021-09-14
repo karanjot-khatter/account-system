@@ -137,4 +137,14 @@ class Auth extends Dbh {
         return true;
     }
 
+    //send feedback to admin
+
+    public function sendFeedback($sub, $feed, $uid)
+    {
+        $sql = 'Insert into feedback (uid, subject, feedback) VALUES(:uid, :sub, :feed)';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['uid' => $uid, 'sub' => $sub, 'feed' => $feed]);
+        return true;
+    }
+
 }
