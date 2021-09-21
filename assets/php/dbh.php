@@ -41,5 +41,42 @@ class Dbh {
                 </div>';
     }
 
+    public function timeInAgo($timestamp)
+    {
+        date_default_timezone_set('Europe/London');
+        $timestamp = strtotime($timestamp) ? strtotime($timestamp) :  $timestamp;
+        $time = time() - $timestamp;
+
+        switch ($time){
+            //seconds
+            case $time <= 60;
+            return 'Just Now!';
+
+            //minutes
+            case $time >= 60 && $time < 3600;
+            return (round($time/60) == 1) ? 'A minute ago' : round($time / 60).' minutes ago';
+
+            //hours
+            case $time >= 3600 && $time < 86400;
+                return (round($time/3600) == 1) ? 'An hour ago' : round($time / 3600).' hours ago';
+
+            //days
+            case $time >= 86400 && $time < 604800;
+                return (round($time/86400) == 1) ? 'A day ago' : round($time / 86400).' days ago';
+
+            //weeks
+            case $time >= 604800 && $time < 2600640;
+                return (round($time/604800) == 1) ? 'A week ago' : round($time / 604800).' weeks ago';
+
+            //months
+            case $time >= 2600640 && $time < 31207680;
+                return (round($time/2600640) == 1) ? 'A month ago' : round($time / 2600640).' months ago';
+
+            //years
+            case $time >= 31207680;
+                return (round($time/31207680) == 1) ? 'A year ago' : round($time / 31207680).' years ago';
+
+        }
+    }
 
 }

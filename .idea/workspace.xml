@@ -4,12 +4,9 @@
     <list default="true" id="b711e72e-c4e5-49e3-b8e7-aec71c7ac26b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/php/authentication.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/authentication.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/php/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/php/dbh.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/dbh.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/php/process.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/process.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedback.php" beforeDir="false" afterPath="$PROJECT_DIR$/feedback.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/notification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +72,7 @@
       <workItem from="1631641503518" duration="2851000" />
       <workItem from="1631647062597" duration="39000" />
       <workItem from="1631723701311" duration="5314000" />
-      <workItem from="1632221866020" duration="318000" />
+      <workItem from="1632221866020" duration="3296000" />
     </task>
     <task id="LOCAL-00001" summary="Created sign in card with bootsrap 5.">
       <created>1628435184005</created>
@@ -182,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631647092880</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Notification page created with notes">
+      <created>1632222320669</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1632222320669</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +208,7 @@
     <MESSAGE value="making the edit profile form functional" />
     <MESSAGE value="Made the change password form functional" />
     <MESSAGE value="feedback page design and functionality created." />
-    <option name="LAST_COMMIT_MESSAGE" value="feedback page design and functionality created." />
+    <MESSAGE value="Notification page created with notes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Notification page created with notes" />
   </component>
 </project>

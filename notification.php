@@ -37,6 +37,25 @@ require_once 'assets/php/header.php';
                 }
             });
         }
+
+        //Remove notification
+
+        $('body').on('click', '.btn-close', function(e){
+            e.preventDefault();
+
+            notification_id = $(this).attr('id');
+
+            $.ajax({
+                url: 'assets/php/process.php',
+                method: 'POST',
+                data: {notification_id: notification_id},
+                success: function(response){
+                    checkNotification();
+                    fetchNotification();
+                }
+            });
+
+        });
     });
 </script>
 </body>

@@ -161,7 +161,7 @@ if ($notification){
                         <hr class="my-2">
                         <div style="height:20px;">
                             <p style="float:left">Reply of feedback from admin</p>
-                            <p style="float: right">'.$row['created_at'].'</p>
+                            <p style="float: right">'.$cUser->timeInAgo($row['created_at']).'</p>
                         </div>
                     </div>';
     }
@@ -179,6 +179,12 @@ if(isset($_POST['action']) && $_POST['action'] == 'checkNotification'){
     } else{
         echo '';
     }
+}
+
+//remove notification
+if(isset($_POST['notification_id'])){
+    $id = $_POST['notification_id'];
+    $cUser->removeNotification($id);
 }
 
 ?>

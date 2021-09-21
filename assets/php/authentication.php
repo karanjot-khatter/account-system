@@ -167,4 +167,12 @@ class Auth extends Dbh {
         return $result;
     }
 
+    //remove notification
+    public function removeNotification($id){
+        $sql = "Delete from notification where id = :id AND type = 'user'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        return true;
+    }
+
 }
