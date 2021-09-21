@@ -8,6 +8,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'add_note')
     $note = $cUser->test_input($_POST['note']);
 
     $cUser->addNewNote($cid, $title, $note);
+    $cUser->notification($cid, 'admin', 'Note added');
 }
 
 //Handle display all notes of a user
@@ -67,6 +68,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'update_note'){
     $note = $cUser->test_input($_POST['note']);
 
     $cUser->updateNote($id, $title, $note);
+    $cUser->notification($cid, 'admin', 'Note updated');
 }
 
 //Handle delete a note from user request
@@ -74,6 +76,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'update_note'){
 if (isset($_POST['del_id'])) {
     $id = $_POST['del_id'];
     $cUser->deleteNote($id);
+    $cUser->notification($cid, 'admin', 'Note deleted');
 }
 
 //Handle display a note from user request
@@ -107,6 +110,7 @@ if (isset($_FILES['image'])){
     }
 
     $cUser->updateProfile($name, $gender, $dob, $phone, $newImage, $cid);
+    $cUser->notification($cid, 'admin', 'Profile updated');
 }
 
 //handle change password ajax request
@@ -124,6 +128,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'change_pass') {
         if(password_verify($currentPass, $cpass)){
             $cUser->changePass($hnewpass, $cid);
             echo $cUser->showMessage('success', 'Password changed successfully');
+            $cUser->notification($cid, 'admin', 'Password changed');
         } else{
             echo $cUser->showMessage('danger', 'Current password is incorrect');
         }
@@ -138,8 +143,42 @@ if(isset($_POST['action']) && $_POST['action'] == 'feedback')
     $feedback = $cUser->test_input($_POST['feedback']);
 
     $cUser->sendFeedback($subject, $feedback, $cid);
+    $cUser->notification($cid, 'admin', 'Feedback written');
 }
 
+//handle fetch notification
 
+if(isset($_POST['action']) && $_POST['action'] == 'fetchNotification'){
+$notification = $cUser->fetchNotification($cid);
+$output = '';
+
+if ($notification){
+    foreach($notification as $row){
+        $output .= ' <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <button type="button" id="'.$row['id'].'" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <h4 class="alert-heading">New Notification</h4>
+                        <p class="mb-0">'.$row['message'].'</p>
+                        <hr class="my-2">
+                        <div style="height:20px;">
+                            <p style="float:left">Reply of feedback from admin</p>
+                            <p style="float: right">'.$row['created_at'].'</p>
+                        </div>
+                    </div>';
+    }
+    echo $output;
+} else{
+    echo '<h3 class="text-center mt-5">No New Notifications</h3>';
+}
+}
+
+//check notification
+
+if(isset($_POST['action']) && $_POST['action'] == 'checkNotification'){
+    if($cUser->fetchNotification($cid)){
+        echo '<i class="fas fa-circle fa-sm text-danger"></i>';
+    } else{
+        echo '';
+    }
+}
 
 ?>

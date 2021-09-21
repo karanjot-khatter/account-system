@@ -34,7 +34,7 @@ require_once 'assets/php/session.php';
                     <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'feedback.php' ? 'active' : '' ?>" href="feedback.php" ><i class="fas fa-comment-dots"></i>&nbsp;Feedback</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'notification.php' ? 'active' : '' ?>" href="notification.php"><i class="fas fa-bell"></i>&nbsp;Notification</a>
+                    <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'notification.php' ? 'active' : '' ?>" href="notification.php"><i class="fas fa-bell"></i>&nbsp;Notification <span id="checkNotification"></span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

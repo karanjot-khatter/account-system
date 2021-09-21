@@ -147,4 +147,24 @@ class Auth extends Dbh {
         return true;
     }
 
+    //insert notification
+
+    public function notification($uid, $type, $message){
+        $sql =  'Insert into notification(uid, type, message) VALUES (:uid, :type, :message)';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['uid' => $uid, 'type' => $type, 'message' => $message]);
+        return true;
+    }
+
+    //fetch notification
+
+    public function fetchNotification($uid){
+        $sql = "Select * from notification where uid = :uid AND type='user'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['uid' => $uid]);
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
 }
