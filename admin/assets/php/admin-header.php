@@ -67,14 +67,13 @@
                 <li><a href="#" class="list-group-item text-light admin-link"><i class="fas fa-cog"></i>  Settings</a></li>
             </ul>
         </div>
-        <div class="col-lg-10">
+        <div class="col-lg-10 p-0">
             <div class="bg-primary pt-2 justify-content-between d-flex">
                 <a href="#" class="text-white" id="open-nav"><h3><i class="fas fa-bars"></i></h3></a>
                 <h4 class="text-light"><?php echo $title;?></h4>
                 <a href="assets/php/logout.php" class="text-light mt-1"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
-        </div>
-    </div>
+    
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">

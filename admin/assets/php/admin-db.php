@@ -13,5 +13,37 @@ class Admin extends Dbh{
 
         return $row;
     }
+
+    //Count total number of rows
+
+    public function totalCount($tablename){
+        $sql="SELECT * from $tablename";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $count = $stmt->rowCount();
+
+        return $count;
+
+    } 
+
+    //gender percentage
+
+    public function noOfMaleUsers(){
+        $sql="SELECT * from users WHERE gender = 'Male'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $count = $stmt->rowCount();
+        return $count;
+
+    }
+
+    public function noOfFemaleUsers(){
+        $sql="SELECT * from users WHERE gender = 'Female'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $count = $stmt->rowCount();
+        return $count;
+
+    }
 }
 ?>
